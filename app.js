@@ -1,4 +1,5 @@
 const ipapi = require('./lib/ipdata.js');
+
 const {
     getWeatherByCity,
     getForecastByCity
