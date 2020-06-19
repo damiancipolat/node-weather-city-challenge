@@ -12,11 +12,11 @@ const forecast = async (req,res,next,city=false)=>{
 
   try {
 
-    const response = await fetchForecast(city);    
+    const response = await fetchForecast(city);
     res.status(200).json(response);
 
   } catch (error) {
-
+    
     //Send to error middleware.
     next(error);
    

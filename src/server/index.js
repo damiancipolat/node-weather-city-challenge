@@ -7,12 +7,10 @@ const config  = require('config');
 const routes = require('./routes');
 const events = require('./events.js');
 
-//Get middlewares
 const {
   errorHandler
 } = require('./middleware.js');
 
-//Get ip/port from config.
 const {
   port
 } = config.get('server');
@@ -22,14 +20,14 @@ const app    = express();
 const server = http.createServer(app);
 
 //Bind the api routes.
-app.use('/v1',routes.v1);
 app.use('/health',routes.healh);
+app.use('/v1',routes.v1);
+
+//Bind error handler middleware.
+app.use(errorHandler);
 
 //Start listen mode.
 app.listen(port,()=>events.onListen(port));
-
-//Use this middleware to handle the errored requests.
-//app.use(errorHandler);
 
 //Define server "special" event to handle situations.
 server.on('error',   events.onServerError);
