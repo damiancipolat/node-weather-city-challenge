@@ -1,19 +1,23 @@
 const {
-  getLocation
+  getCity
 } = require('../../lib/ipdata.js');
 
+const {
+  getWeatherByCity
+} = require('../../lib/weather.js');
+
 /**
- * Location controller.
+ * Current controller.
  * @param {object} req request object.
  * @param {object} res response object.
  */
-const location = async (req,res, next)=>{
+const current = async (req,res, next, city=false)=>{
 
   try {
 
     //Get current ip location info, from ipapi.co
-    const location = await getLocation();
-    res.status(200).json(location);
+    //const location = await getLocation();
+    res.status(200).json(true);
 
   } catch (error) {
 
@@ -24,4 +28,4 @@ const location = async (req,res, next)=>{
 
 };
 
-module.exports = location;
+module.exports = current;
