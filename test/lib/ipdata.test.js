@@ -17,7 +17,7 @@ describe('ip-api test', ()=>{
 
     const {
       getLocation
-    } = proxyquire('../../lib/ipdata.js',{
+    } = proxyquire('../../src/lib/ipdata.js',{
       'ipapi.co':ipapiMock
     });
 
@@ -44,7 +44,7 @@ describe('ip-api test', ()=>{
 
     const {
       getLocation
-    } = proxyquire('../../lib/ipdata.js',{
+    } = proxyquire('../../src/lib/ipdata.js',{
       'ipapi.co':ipapiMock
     });
 
@@ -61,7 +61,7 @@ describe('ip-api test', ()=>{
 
     const {
       getCity
-    } = proxyquire('../../lib/ipdata.js',{
+    } = proxyquire('../../src/lib/ipdata.js',{
       'ipapi.co':ipapiMock
     });
 
@@ -77,7 +77,7 @@ describe('ip-api test', ()=>{
 
     const {
       getCity
-    } = proxyquire('../../lib/ipdata.js',{
+    } = proxyquire('../../src/lib/ipdata.js',{
       'ipapi.co':ipapiMock
     });
 

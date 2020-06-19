@@ -2,5 +2,8 @@
   "openWeather":{
     "baseUrl":"https://api.openweathermap.org/data/2.5/",
     "apiKey":"fb24bdedbc06fec558d52fc020795211"
+  },
+  "server":{
+    "port":8080
   }
 }

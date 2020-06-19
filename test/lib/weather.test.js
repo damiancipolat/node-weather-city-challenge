@@ -13,7 +13,7 @@ describe('weather api - test', ()=>{
 
     const {
       getWeatherByCity
-    } = proxyquire('../../lib/weather.js',{
+    } = proxyquire('../../src/lib/weather.js',{
       'node-fetch':sinon.fake.resolves({status:500,body:'Internal server error'})
     });
 
@@ -25,7 +25,7 @@ describe('weather api - test', ()=>{
 
     const {
       getWeatherByCity
-    } = proxyquire('../../lib/weather.js',{
+    } = proxyquire('../../src/lib/weather.js',{
       'node-fetch':sinon.fake.resolves({status:404,body:'Internal server error'})
     });
 
@@ -50,7 +50,7 @@ describe('weather api - test', ()=>{
 
     const {
       getWeatherByCity
-    } = proxyquire('../../lib/weather.js',{
+    } = proxyquire('../../src/lib/weather.js',{
       'node-fetch':sinon.fake.resolves(mock)
     });
 
@@ -72,7 +72,7 @@ describe('weather api - test', ()=>{
 
     const {
       getForecastByCity
-    } = proxyquire('../../lib/weather.js',{
+    } = proxyquire('../../src/lib/weather.js',{
       'node-fetch':sinon.fake.resolves({status:500,body:'Internal server error'})
     });
 
@@ -84,7 +84,7 @@ describe('weather api - test', ()=>{
 
     const {
       getForecastByCity
-    } = proxyquire('../../lib/weather.js',{
+    } = proxyquire('../../src/lib/weather.js',{
       'node-fetch':sinon.fake.resolves({status:404,body:'Internal server error'})
     });
 
@@ -108,7 +108,7 @@ describe('weather api - test', ()=>{
 
     const {
       getForecastByCity
-    } = proxyquire('../../lib/weather.js',{
+    } = proxyquire('../../src/lib/weather.js',{
       'node-fetch':sinon.fake.resolves(mock)
     });
 
@@ -123,6 +123,6 @@ describe('weather api - test', ()=>{
       }]
     });
 
-  });  
+  });
 
 });
