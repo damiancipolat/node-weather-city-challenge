@@ -1,6 +1,6 @@
 const {
-  getLocation
-} = require('../../lib/ipdata.js');
+  fetchLocatioon
+} = require('../../services/location.js');
 
 /**
  * Location controller.
@@ -12,7 +12,7 @@ const location = async (req,res, next)=>{
   try {
 
     //Get current ip location info, from ipapi.co
-    const location = await getLocation();
+    const location = await fetchLocatioon();
     res.status(200).json(location);
 
   } catch (error) {

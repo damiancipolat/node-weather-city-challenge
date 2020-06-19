@@ -36,7 +36,7 @@ const onProcessKill = server =>{
 
 //When in the server happen a uncaugth exception.
 const onException = err =>{
-  logger.info(err);
+  console.info(err);
 }
 
 module.exports = {
