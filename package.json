@@ -1,14 +1,14 @@
 {
   "name": "weather-city-challenge",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.6",
+  "description": "Nodejs challenge api",
   "main": "index.js",
   "scripts": {
     "start": "node ./src/server/index.js",
     "test": "mocha ./test/**/*.test.js",
     "coverage": "nyc npm test",
     "report": "nyc --reporter=lcov npm test",
-    "build": "exit 0"
+    "build": ". ./tag.sh && docker build . -t $PACKAGE_TAG"
   },
   "repository": {
     "type": "git",
