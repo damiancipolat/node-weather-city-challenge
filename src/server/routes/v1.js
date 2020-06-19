@@ -5,7 +5,7 @@ const router  = express.Router();
 const health   = require('../controller/health.js');
 const current  = require('../controller/current.js');
 const location = require('../controller/location.js');
-const forecast = require('../controller/home.js');
+const forecast = require('../controller/forecast.js');
 const notFound = require('../controller/not-found.js');
 
 //Bind routes with controller.

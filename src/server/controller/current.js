@@ -11,6 +11,7 @@ const {
  * Current controller.
  * @param {object} req request object.
  * @param {object} res response object.
+ * @returns {Promise}.
  */
 const current = async (req,res, next, city=false)=>{
 

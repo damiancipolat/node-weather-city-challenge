@@ -15,8 +15,8 @@ const onServerError = ()=>{
 //On server start.
 const onListen = (port)=>{
 
-  console.info('ᕦ(ò_óˇ)ᕤ - The Face');
-  console.info(`Home aggretator API - Running on port: ${port}`);
+  console.info('NODEJS challenge');
+  console.info(`City weather API - Running on port: ${port}`);
   
 }
 
