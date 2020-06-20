@@ -1,4 +1,4 @@
-# Node.js fintech - challenge
+# Node Developer Applicant - challenge
 
 ### **Configuración**:
 Dentro del directorio /config se encuentran los archivos json de cada entorno, por defecto se usa "default.json".
@@ -38,6 +38,7 @@ damian@challenge:~$ npm run build
 
 ### **Stack usado**:
 - Node.js v10
+- swagger-ui-express
 - Docker
 - Test: mocha / chai / sinon / proxyquire / nyc
   (Opte por usar estas librerias por que tengo más experiencia trabajando con ellas que las recomendadas, ademas de ser más modernas).
@@ -45,6 +46,10 @@ damian@challenge:~$ npm run build
 - express.js
 - pino: Para logear en forma de json al stdout.
 - node-fetch: Para realizar request.
+
+### **API REST**
+Para observar la documentacion del api rest, el proyecto cuenta con un modulo de swagger, puede accederlo desde:
+http://127.0.0.1:8080/doc/
 
 ### **Decisiones de arquitectura**
 El api fue dividida en tres capas:
