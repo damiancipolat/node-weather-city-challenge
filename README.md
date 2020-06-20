@@ -36,6 +36,11 @@ damian@challenge:~$ npm start
 damian@challenge:~$ npm run build
 ```
 
+- Ejecutar contenedor de la ultima imagén subida:
+```console
+damian@challenge:~$ npm run docker
+```
+
 ### **Stack usado**:
 - Node.js v10
 - swagger-ui-express
