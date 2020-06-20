@@ -1,6 +1,6 @@
 # node-weather-city-challenge
 
-## **Comandos de ejecución**:
+## **Comandos**:
 
 - Ejecutar test:
 ```console
@@ -13,6 +13,11 @@ damian@challenge:~$ npm run coverage
 - Ejecutar servidor:
 ```console
 damian@challenge:~$ npm start
+```
+
+- Crear imagén de docker:
+```console
+damian@challenge:~$ npm run build
 ```
 
 ## **Stack usado**:
