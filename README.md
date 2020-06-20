@@ -68,12 +68,10 @@ Utilizo el campo "version" del archivo package.json del proyecto para registrar 
 Que se ejecuta un script tag.sh este script extrae del archivo package.json la version para poder ser usada para **taggear** imagenes.
 
 ### Unit test:
-El proyecto contiene un script de analisis y reporte de cobertura del codigo usando el modulo npm "nyc" de isntanbuljs.
+El proyecto contiene un script de analisis y reporte de cobertura del codigo usando el modulo npm "nyc" de istanbuljs.
 
 ```console
 damian@challenge:~$ npm run coverage
-
-.....
 
 -------------------|---------|----------|---------|---------|-------------------
 File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
@@ -96,3 +94,6 @@ All files          |     100 |    93.75 |     100 |     100 |
   location.js      |     100 |      100 |     100 |     100 |                   
 -------------------|---------|----------|---------|---------|-------------------
 ```
+
+El unit test es ejecutado dentro del archivo Dockerfile en el proceso de build de la imagén en caso de habar algun
+error en los test no nos permitira realizarlo.
