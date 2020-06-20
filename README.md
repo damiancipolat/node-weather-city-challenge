@@ -47,7 +47,7 @@ damian@challenge:~$ npm run build
 - pino: Para logear en forma de json al stdout.
 - node-fetch: Para realizar request.
 
-## **API REST**
+### **API REST**
 Para observar la documentacion del api rest, el proyecto cuenta con un modulo de swagger, puede accederlo desde:
 http://127.0.0.1:8080/doc/
 
