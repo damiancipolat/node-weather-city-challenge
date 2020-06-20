@@ -14,7 +14,10 @@ describe('current controller - test', ()=>{
     const current  = proxyquire('../../../src/server/controller/current.js',{
       '../../services/current.js':{
         fetchConditions:sinon.fake.resolves({weather:true})
-      }
+      },
+      'pino':()=>({
+        info:sinon.fake.returns('')
+      })
     });
 
     const jsonStub = sinon.spy();
@@ -40,7 +43,10 @@ describe('current controller - test', ()=>{
     const current  = proxyquire('../../../src/server/controller/current.js',{
       '../../services/current.js':{
         fetchConditions:sinon.fake.resolves({weather:true})
-      }
+      },
+      'pino':()=>({
+        info:sinon.fake.returns('')
+      })
     });
 
     const jsonStub = sinon.spy();
@@ -68,7 +74,10 @@ describe('current controller - test', ()=>{
         fetchConditions:()=>{
           throw {error:'mocked.com'};
         }
-      }
+      },
+      'pino':()=>({
+        info:sinon.fake.returns('')
+      })
     });
 
     const nextStub = sinon.spy();
@@ -88,6 +97,5 @@ describe('current controller - test', ()=>{
     chai.expect(nextStub.firstCall.args[0]).to.eql({ error: 'mocked.com' });
 
 	});
-
 
 });
