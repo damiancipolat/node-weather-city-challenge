@@ -1,4 +1,4 @@
-# Node.js challenge
+# Node.js fintech - challenge
 
 ### **Configuración**:
 Dentro del directorio /config se encuentran los archivos json de cada entorno, por defecto se usa "default.json".
