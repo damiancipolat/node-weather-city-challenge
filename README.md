@@ -48,4 +48,8 @@ damian@challenge:~$ npm run build
 
 ## **Decisiones de arquitectura**
 En esta api se opto por separar la logica de resolución de la capa de comunicación REST, por ende
-la mayor parte del codigo esta desarrollada usando simple JS "servicios" comunicando situaciones de error atravez de excepciones, y la parte del servidor "expressjs" es donde se resuelven las distintas rutas y dentro de contoladores invocar servicios.
+la mayor parte del codigo esta desarrollada usando simple JS "servicios" comunicando situaciones de error atravez de excepciones, y la parte del servidor "expressjs" es donde se resuelven las distintas rutas y dentro de controladores invocar servicios.
+
+**Middlewares**:
+- Swagger: Genera un sandbox de prueba del api.
+- Error Handler: Este fue desarrollado para resolver en un unico punto todos las excepciones recibidas, para logearlas y retornar la respuesta. /src/server/middleware.js
