@@ -1,6 +1,6 @@
 # Node.js challenge
 
-## **Configuración**:
+### **Configuración**:
 Dentro del directorio /config se encuentran los archivos json de cada entorno, por defecto se usa "default.json".
 
 ```console
@@ -16,7 +16,7 @@ Dentro del directorio /config se encuentran los archivos json de cada entorno, p
 }
 ```
 
-## **Comandos**:
+### **Comandos**:
 
 - Ejecutar test:
 ```console
@@ -36,7 +36,7 @@ damian@challenge:~$ npm start
 damian@challenge:~$ npm run build
 ```
 
-## **Stack usado**:
+### **Stack usado**:
 - Node.js v10
 - Docker
 - Test: mocha / chai / sinon / proxyquire / nyc
@@ -46,7 +46,7 @@ damian@challenge:~$ npm run build
 - pino: Para logear en forma de json al stdout.
 - node-fetch: Para realizar request.
 
-## **Decisiones de arquitectura**
+### **Decisiones de arquitectura**
 El api fue dividida en tres capas:
 - Lib: Para codigo compartido o integraciones.
 - Server: Contiene el codigo para ejecutar un servidor rest.
@@ -58,7 +58,7 @@ Se opto por dividir la comunicación atravez de red de la logica de negocio por 
 - Swagger: Genera un sandbox de prueba del api.
 - Error Handler: Este fue desarrollado para resolver en un unico punto todos las excepciones recibidas, para logearlas y retornar la respuesta. /src/server/middleware.js
 
-## **Versionado**:
+### **Versionado**:
 Utilizo el campo "version" del archivo package.json del proyecto para registrar los cambios de versiones en el proyecto, este campo es el unico lugar en donde se registra la versión en todo el proyecto.
 
 **Docker**: Al momento de buildear la imagén de docker, se puede observar en el archivo package.json
