@@ -1,33 +1,30 @@
 const process = require('process');
 const config  = require('config');
+const logger  = require('pino')();
 
 const {
   killTimeout
 } = config.get('server');
 
 //On server internal error.
-const onServerError = ()=>{
-
-  console.info('SERVER ERROR');
-
-}
+const onServerError = ()=>logger.error({message:`Server error`});
 
 //On server start.
 const onListen = (port)=>{
 
-  console.info('NODEJS challenge');
-  console.info(`City weather API - Running on port: ${port}`);
+  logger.info('NODEJS challenge');
+  logger.info(`City weather API - Running on port: ${port}`);
   
 }
 
 //When the process receive kill signal.
 const onProcessKill = server =>{
   
-  console.info('Service termination signal received');
+  logger.info('Service termination signal received');
   
   setTimeout(() => {
 
-    console.info('Finishing server');
+    logger.info('Finishing server');
     server.close(()=>process.exit(0));
 
   }, killTimeout);
@@ -35,9 +32,7 @@ const onProcessKill = server =>{
 }
 
 //When in the server happen a uncaugth exception.
-const onException = err =>{
-  console.info(err);
-}
+const onException = err =>logger.error({message:err});
 
 module.exports = {
   onListen,

@@ -7,7 +7,7 @@ const sinon      = require('sinon');
 const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 
-describe('weather api - test', ()=>{
+describe('current data - test', ()=>{
 
   it('getForecastByCity - city',async ()=>{
 
@@ -146,6 +146,5 @@ describe('weather api - test', ()=>{
 		});
 
   });	
-
 
 });

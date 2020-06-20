@@ -1,3 +1,5 @@
+const logger = require('pino')();
+
 const {
   fetchConditions
 } = require('../../services/current.js');
@@ -12,6 +14,8 @@ const current = async (req,res, next, city=false)=>{
 
   try {
 
+    logger.info({url: req.url, method: req.method, message:`Current request - city:${city}`});
+    
     const response = await fetchConditions(city);
     res.status(200).json(response);
 

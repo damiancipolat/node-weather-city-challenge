@@ -1,5 +1,7 @@
+const logger = require('pino')();
+
 const {
-  fetchLocatioon
+  fetchLocation
 } = require('../../services/location.js');
 
 /**
@@ -11,8 +13,10 @@ const location = async (req,res, next)=>{
 
   try {
 
+    logger.info({url: req.url, method: req.method, message:`Location request`});
+
     //Get current ip location info, from ipapi.co
-    const location = await fetchLocatioon();
+    const location = await fetchLocation();
     res.status(200).json(location);
 
   } catch (error) {

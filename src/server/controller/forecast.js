@@ -1,3 +1,5 @@
+const logger = require('pino')();
+
 const {
   fetchForecast
 } = require('../../services/forecast.js');
@@ -11,6 +13,8 @@ const {
 const forecast = async (req,res,next,city=false)=>{
 
   try {
+
+    logger.info({url: req.url, method: req.method, message:`Forecast request - city:${city}`});
 
     const response = await fetchForecast(city);
     res.status(200).json(response);
