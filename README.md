@@ -66,3 +66,33 @@ Utilizo el campo "version" del archivo package.json del proyecto para registrar 
 "build": ". ./tag.sh && docker build . -t $PACKAGE_TAG"
 ```
 Que se ejecuta un script tag.sh este script extrae del archivo package.json la version para poder ser usada para **taggear** imagenes.
+
+### Unit test:
+El proyecto contiene un script de analisis y reporte de cobertura del codigo usando el modulo npm "nyc" de isntanbuljs.
+
+```console
+damian@challenge:~$ npm run coverage
+
+.....
+
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |     100 |    93.75 |     100 |     100 |                   
+ lib               |     100 |      100 |     100 |     100 |                   
+  http.js          |     100 |      100 |     100 |     100 |                   
+  ipdata.js        |     100 |      100 |     100 |     100 |                   
+  weather.js       |     100 |      100 |     100 |     100 |                   
+ server            |     100 |       75 |     100 |     100 |                   
+  middleware.js    |     100 |       75 |     100 |     100 | 12-15             
+ server/controller |     100 |      100 |     100 |     100 |                   
+  current.js       |     100 |      100 |     100 |     100 |                   
+  forecast.js      |     100 |      100 |     100 |     100 |                   
+  health.js        |     100 |      100 |     100 |     100 |                   
+  not-found.js     |     100 |      100 |     100 |     100 |                   
+ services          |     100 |      100 |     100 |     100 |                   
+  current.js       |     100 |      100 |     100 |     100 |                   
+  forecast.js      |     100 |      100 |     100 |     100 |                   
+  location.js      |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+```
