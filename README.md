@@ -22,7 +22,7 @@ Dentro del directorio /config se encuentran los archivos json de cada entorno, p
 ```console
 damian@challenge:~$ npm test
 ```
-- Ejecutar revisión de cobertuda de codigo:
+- Ejecutar revisión de cobertura de codigo:
 ```console
 damian@challenge:~$ npm run coverage
 ```
