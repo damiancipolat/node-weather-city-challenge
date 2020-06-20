@@ -3,9 +3,16 @@ const http    = require('http');
 const express = require('express');
 const config  = require('config');
 
+//Swagger
+const swaggerUi  = require('swagger-ui-express');
+const YAML = require('yamljs');
+
 //Define routes and events
 const routes = require('./routes');
 const events = require('./events.js');
+
+//Load yaml file.
+const swaggerDocument = YAML.load('./swagger.yml');
 
 const {
   errorHandler
@@ -20,6 +27,7 @@ const app    = express();
 const server = http.createServer(app);
 
 //Bind the api routes.
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/health',routes.healh);
 app.use('/v1',routes.v1);
 

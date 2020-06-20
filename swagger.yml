@@ -1,0 +1,138 @@
+openapi: 3.0.0
+info:
+  version: "base"
+  title: "My company api"
+  description: "Esta aplicacion permite obtener informacion de empleados"
+  termsOfService: "https://localhost/terms"
+  contact:
+    name: "Damian"
+    url: "http://www.damiancipolat.com"
+    email: "damian.cipolat@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+    
+servers:
+  - url: "http://google.com/v1/api"
+    description: "V1 api"
+  - url: "http://google.com/v2/api"
+    description: "V2 api"
+
+paths:
+  /employes:
+    get:
+      description: "permite obtener lista de empleados segun condiciones"
+      parameters:
+        - in: query
+          name: id
+          required: false
+          description: "Codigo del empleado"
+          schema:
+            type: number
+            example: 1234
+        - in: query
+          name: "sueldo"
+          required: true
+          description: "Sueldo del empleado"
+          schema:
+            type: number
+            example: 150000
+            
+      responses:
+        200:
+          description: "Request success"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                      example: 456
+                    nombre:
+                      type: string
+                      example: "Jorge"
+                    sueldo:
+                      type: number
+                      format: float
+                      example: 150000
+        404:
+          description: "Resource not found"
+          content:
+            application/json:
+              schema:
+                type: string
+                example: {"message":"Error 404 page not found"}
+    post:
+      description: "Agregar nuevo sueldo"
+      requestBody:
+        content:
+          application/json:        
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: 456
+                nombre:
+                  type: string
+                  example: "Jorge"
+                sueldo:
+                  type: number
+                  format: float
+                  example: 150000
+                email:
+                  type: string
+                  description: "Email del empleado"
+                  example: "damian.cipolat@gmail.com"
+      responses:
+        200:
+          description: "Request ok"
+          content:
+            application/json:
+              schema:
+                type: string
+                example: {"message":"creation ok"}
+            text/plain:
+              schema:
+                type: string
+                example: "Creation ok"
+                
+        500:
+          description: "Request FAIL"
+          content:
+            application/json:
+              schema:
+                type: string
+                example: {"message":"creation error"}                
+  /employes/{id}:
+    get:
+      description: "info de un empleado en base a su id"
+      parameters: 
+        - in: path
+          name: id
+          required: true
+          description: "Codigo del empleado"
+          schema:
+            type: number
+            example: 465
+
+      responses:
+        200:
+          description: "Request succefull"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 456
+                  nombre:
+                    type: string
+                    example: "Jorge"
+                  sueldo:
+                    type: number
+                    format: float
+                    example: 150000

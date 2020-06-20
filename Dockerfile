@@ -8,6 +8,5 @@ RUN npm install
 COPY . .
 RUN npm run test
 RUN npm prune --production
-RUN rm -Rf test
-EXPOSE 3000
+EXPOSE 8080
 CMD [ "npm" , "start" ]

@@ -26,7 +26,9 @@
     "http-errors": "^1.7.3",
     "ipapi.co": "^0.3.0",
     "node-fetch": "^2.6.0",
-    "pino": "^6.3.2"
+    "pino": "^6.3.2",
+    "swagger-ui-express": "^4.1.4",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
