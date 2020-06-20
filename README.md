@@ -57,3 +57,12 @@ Se opto por dividir la comunicación atravez de red de la logica de negocio por 
 **Middlewares**:
 - Swagger: Genera un sandbox de prueba del api.
 - Error Handler: Este fue desarrollado para resolver en un unico punto todos las excepciones recibidas, para logearlas y retornar la respuesta. /src/server/middleware.js
+
+## **Versionado**:
+Utilizo el campo "version" del archivo package.json del proyecto para registrar los cambios de versiones en el proyecto, este campo es el unico lugar en donde se registra la versión en todo el proyecto.
+
+**Docker**: Al momento de buildear la imagén de docker, se puede observar en el archivo package.json
+```console
+"build": ". ./tag.sh && docker build . -t $PACKAGE_TAG"
+```
+Que se ejecuta un script tag.sh este script extrae del archivo package.json la version para poder ser usada para **taggear** imagenes.
