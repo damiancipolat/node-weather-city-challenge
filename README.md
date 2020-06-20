@@ -45,3 +45,7 @@ damian@challenge:~$ npm run build
 - express.js
 - pino: Para logear en forma de json al stdout.
 - node-fetch: Para realizar request.
+
+## **Decisiones de arquitectura**
+En esta api se opto por separar la logica de resolución de la capa de comunicación REST, por ende
+la mayor parte del codigo esta desarrollada usando simple JS "servicios" comunicando situaciones de error atravez de excepciones, y la parte del servidor "expressjs" es donde se resuelven las distintas rutas y dentro de contoladores invocar servicios.
