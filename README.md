@@ -1,5 +1,21 @@
 # node-weather-city-challenge
 
+## **Configuración**:
+Dentro del directorio /config se encuentran los archivos json de cada entorno, por defecto se usa "default.json".
+
+```console
+{
+  "openWeather":{
+    "baseUrl":"https://api.openweathermap.org/data/2.5/",
+    "apiKey":"xxxxxxxxxxxxxxxxxxxxx"
+  },
+  "server":{
+    "port":8080,
+    "killTimeout":100
+  }
+}
+```
+
 ## **Comandos**:
 
 - Ejecutar test:
