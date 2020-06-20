@@ -47,8 +47,12 @@ damian@challenge:~$ npm run build
 - node-fetch: Para realizar request.
 
 ## **Decisiones de arquitectura**
-En esta api se opto por separar la logica de resolución de la capa de comunicación REST, por ende
-la mayor parte del codigo esta desarrollada usando simple JS "servicios" comunicando situaciones de error atravez de excepciones, y la parte del servidor "expressjs" es donde se resuelven las distintas rutas y dentro de controladores invocar servicios.
+El api fue dividida en tres capas:
+- Lib: Para codigo compartido o integraciones.
+- Server: Contiene el codigo para ejecutar un servidor rest.
+- Services: Resuelve logica de negocio.
+
+Se opto por dividir la comunicación atravez de red de la logica de negocio por este motivo /services y /server estan al mismo nivel, este diseño esta pensado para en un escenario productivo poder cambiar la forma en que se comunica un microservicio sin tener que realizar mayores cambios.
 
 **Middlewares**:
 - Swagger: Genera un sandbox de prueba del api.
