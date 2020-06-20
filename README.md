@@ -1,12 +1,21 @@
 # node-weather-city-challenge
 
-## Comando de ejecución:
+## **Comandos de ejecución**:
 
 - Ejecutar test:
 ```console
-foo@bar:~$ npm test
+damian@challenge:~$ npm test
 ```
-## Stack usado:
+- Ejecutar revisión de cobertuda de codigo:
+```console
+damian@challenge:~$ npm run coverage
+```
+- Ejecutar servidor:
+```console
+damian@challenge:~$ npm start
+```
+
+## **Stack usado**:
 - Node.js v10
 - Docker
 - Test: mocha / chai / sinon / proxyquire / nyc
