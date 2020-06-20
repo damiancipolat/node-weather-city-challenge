@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/server/index.js",
-    "test": "mocha ./test/**/*.test.js",
+    "test": "mocha --recursive",
     "coverage": "nyc npm test",
     "report": "nyc --reporter=lcov npm test",
     "build": ". ./tag.sh && docker build . -t $PACKAGE_TAG"
