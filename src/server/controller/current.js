@@ -14,9 +14,10 @@ const current = async (req,res, next, city=false)=>{
 
   try {
 
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     logger.info({url: req.url, method: req.method, message:`Current request - city:${city}`});
     
-    const response = await fetchConditions(city);
+    const response = await fetchConditions(city,ip);
     res.status(200).json(response);
 
   } catch (error) {

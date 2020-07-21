@@ -34,6 +34,9 @@ describe('location controller - test', ()=>{
     const jsonStub = sinon.spy();
 
     const req = {
+      headers:{
+        'x-forwarded-for':'127.0.0.1'
+      },      
       url:'mock.com',
       method:'GET'
     };
@@ -65,6 +68,9 @@ describe('location controller - test', ()=>{
     const nextStub = sinon.spy();
 
     const req = {
+      headers:{
+        'x-forwarded-for':'127.0.0.1'
+      },      
       url:'mock.com',
       method:'GET'
     };

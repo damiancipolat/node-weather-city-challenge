@@ -5,7 +5,7 @@ const {
 /**
  * Location controller.
  */
-const fetchLocation = async ()=> await getLocation();
+const fetchLocation = async (ip)=> await getLocation(ip);
 
 module.exports = {
   fetchLocation

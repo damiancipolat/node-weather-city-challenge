@@ -12,10 +12,10 @@ const {
  * @param {object} req request object.
  * @returns {Promise}.
  */
-const fetchForecast = async (city=false)=>{
+const fetchForecast = async (city=false,ip)=>{
 
   //Get the current city or the location info.
-  const location = await (city?getCity():getLocation());
+  const location = await (city?getCity():getLocation(ip));
   
   //Get the city name.
   const cityName = city?location:location.city;
