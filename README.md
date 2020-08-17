@@ -1,3 +1,5 @@
+<img src="https://github.com/damiancipolat/node-bff/blob/master/doc/node.png?raw=true" width="150px" align="right" />
+
 # Node Developer Applicant - challenge
 
 ### **Configuración**:
